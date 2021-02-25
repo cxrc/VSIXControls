@@ -20,7 +20,6 @@ namespace VSIXControls
         {
             InitializeComponent();
             Colored = true;
-
         }
 
         public Color FondoCheked { get => fondoCheked; set { fondoCheked = value; Invalidate(); } }
