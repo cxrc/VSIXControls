@@ -87,7 +87,7 @@ namespace VSIXControls
                 fondo = new SolidBrush(fondoUncheckedActual);
                 mandoX = 1;
             }
-            Rectangle rectanguloInterior = new Rectangle(2, 2, Width - 3, Height - 3);
+            Rectangle rectanguloInterior = new Rectangle(2, 2, Width - 4, Height - 4);
             gr.FillRectangle(fondo, rectanguloInterior);
 
             // Dibuja el Mando
@@ -97,12 +97,12 @@ namespace VSIXControls
             int y1 = Height - 2;
             Pen lapizGris = new Pen(Color.Gray);
 
-            while (x <= mandoX + Width/2 - 1)
+            while (x <= mandoX + Width / 2 - 1)
             {
-                if (x <= mandoX + Width/2 - 1) gr.DrawLine(lapizGris, x, y0, x++, y1);
-                if (x <= mandoX + Width/2 - 1) gr.DrawLine(lapizGris, x, y0, x++, y1);
-                if (x <= mandoX + Width/2 - 1) gr.DrawLine(lapizNegro, x, y0, x++, y1);
-                if (x <= mandoX + Width/2 - 1) gr.DrawLine(lapizNegro, x, y0, x++, y1);
+                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizGris, x, y0, x++, y1);
+                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizGris, x, y0, x++, y1);
+                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizNegro, x, y0, x++, y1);
+                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizNegro, x, y0, x++, y1);
             }
 
             // |/O
@@ -113,11 +113,11 @@ namespace VSIXControls
                 int margen = Height / 3;
                 if (estado == Estados.ON)
                 {
-                    gr.DrawLine(lapiz10, Width / 4, margen + 1, Width / 4, Height - 1 - margen);
+                    gr.DrawLine(lapiz10, 1 + Width / 4, margen + 1, 1 + Width / 4, Height - 1 - margen);
                 }
                 else
                 {
-                    gr.DrawEllipse(lapiz10, Width - Width/4 - (Height / 3) / 2, margen, Height/3, Height/3);
+                    gr.DrawEllipse(lapiz10, Width - 1 - Width / 4 - (Height / 3) / 2, margen - 1, Height / 3, Height / 3);
                 }
             }
         }
