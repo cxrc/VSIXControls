@@ -39,6 +39,7 @@ namespace VSIXControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Switch";
             this.Size = new System.Drawing.Size(30, 15);
+            this.EnabledChanged += new System.EventHandler(this.Switch_EnabledChanged);
             this.ResumeLayout(false);
 
         }

@@ -11,30 +11,51 @@ namespace VSIXControls
     [ProvideToolboxControl("VSIXControls", false)]
     public partial class Switch : UserControl
     {
-        private bool coloreado;
+        private bool colored;
         private bool showLabels = false;
-        private Color fondoOn = Color.Lime;
-        private Color fondoOff = Color.Red;
+        private Color backgroundOn = Color.Lime;
+        private Color backgroundOff = Color.Red;
         private Color labelColor = Color.Black;
-        private Color fondoChekedActual;
-        private Color fondoUncheckedActual;
-        public enum Estados { OFF, ON }
-        private Estados estado;
+        private Color BackgroundON_Actual;
+        private Color BackgroundOFF_Actual;
+        private bool isON;
 
         public Switch()
         {
             InitializeComponent();
-            Coloreado = true;
+            Colored = true;
+        }
+        public EventHandler onIsOnChanged;
+        public event EventHandler IsONChanged
+        {
+            add
+            {
+                onIsOnChanged += value;
+            }
+            remove
+            {
+                onIsOnChanged -= value;
+            }
         }
 
-        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'ON' y la propiedad Coloreado es 'true'")]
-        public Color FondoOn { get => fondoOn; set { fondoOn = value; Invalidate(); } }
-        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'OFF' y la propiedad Coloreado es 'true'")]
-        public Color FondoOff { get => fondoOff; set { fondoOff = value; Invalidate(); } }
-        [Category("Comportamiento"), Description("Estado del interruptor ON u OFF")]
-        public Estados Estado { get => estado; set { estado = value; Invalidate(); } }
-        [Category("Apariencia"), Description("Determina si el control muestra los colores 'FondoOn' y 'FondoOff' o siempre un fondo gris")]
-        public bool Coloreado { get => coloreado; set { coloreado = value; OnChangeColoredProperty(); } }
+        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'ON' (IsON = true) y la propiedad **Colored** es 'true'")]
+        public Color BackgroundON { get => backgroundOn; set { backgroundOn = value; Invalidate(); } }
+        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'OFF' (IsON = false) y la propiedad *Colored* es 'true'")]
+        public Color BackgroundOFF { get => backgroundOff; set { backgroundOff = value; Invalidate(); } }
+        [Category("Comportamiento"), Description("Estado del interruptor ON (IsON = true) u OFF (IsON = False).")]
+        public bool IsON 
+        { 
+            get => isON; 
+            set 
+            {
+                isON = value;
+                Invalidate();
+                EventArgs e = new EventArgs();
+                OnIsOnChanged(this,e);
+            }
+        }
+        [Category("Apariencia"), Description("Determina si el control muestra los colores 'BackgroundON' y 'BackgroundOFF' o solamente un fondo gris")]
+        public bool Colored { get => colored; set { colored = value; OnChangeColoredProperty(); } }
         [Category("Apariencia"), Description("Determina si el control muestra los caracteres '1' y 'o' indicando el estado del control.")]
         public bool ShowLabels { get => showLabels; set { showLabels = value; Invalidate(); } }
         [Category("Apariencia"), Description("Determina el color de las etiqueta '1' y 'o' visibles si ShowLabels es 'True'.")]
@@ -42,15 +63,15 @@ namespace VSIXControls
 
         private void OnChangeColoredProperty()
         {
-            if (coloreado)
+            if (colored)
             {
-                fondoChekedActual = FondoOn;
-                fondoUncheckedActual = FondoOff;
+                BackgroundON_Actual = BackgroundON;
+                BackgroundOFF_Actual = BackgroundOFF;
             }
             else
             {
-                fondoChekedActual = Color.DarkGray;
-                fondoUncheckedActual = Color.DarkGray;
+                BackgroundON_Actual = Color.DarkGray;
+                BackgroundOFF_Actual = Color.DarkGray;
             }
             Invalidate();
         }
@@ -60,64 +81,81 @@ namespace VSIXControls
             base.OnPaint(e);
 
             Graphics gr = e.Graphics;
-            Brush fondo;
-            int mandoX;
+            Brush Background;
+            int xMando;
+
+            // Lápices
+
+            Pen blackPen = new Pen(Color.Black);
+            Pen whitePen = new Pen(Color.White);
+            Pen grayPen = new Pen(Color.Gray);
+            Pen labelPen = new Pen(labelColor);
+            if (!Enabled)
+            {
+                Pen LightGrayPen = new Pen(Color.LightGray);
+                blackPen = grayPen;
+                whitePen = LightGrayPen;
+                grayPen = LightGrayPen;
+                labelPen = LightGrayPen;
+            }
 
             // Borde
 
-            Pen lapizNegro = new Pen(Color.Black);
-            Pen lapizBlanco = new Pen(Color.White);
+
             Rectangle rectanguloBorde = new Rectangle(0, 0, Width - 1, Height - 1);
 
-            gr.DrawRectangle(lapizNegro, rectanguloBorde);
-            gr.DrawLine(lapizNegro, 1, Height - 2, 1, 1);
-            gr.DrawLine(lapizNegro, 1, 1, Width - 2, 1);
-            gr.DrawLine(lapizBlanco, 2, Height - 2, Width - 2, Height - 2);
-            gr.DrawLine(lapizBlanco, Width - 2, Height - 2, Width - 2, 2);
+            gr.DrawRectangle(blackPen, rectanguloBorde);
+            gr.DrawLine(blackPen, 1, Height - 2, 1, 1);
+            gr.DrawLine(blackPen, 1, 1, Width - 2, 1);
+            gr.DrawLine(whitePen, 2, Height - 2, Width - 2, Height - 2);
+            gr.DrawLine(whitePen, Width - 2, Height - 2, Width - 2, 2);
 
             // Dibuja el fondo
 
-            if (Estado == Estados.ON)
+            if (isON)
             {
-                fondo = new SolidBrush(fondoChekedActual);
-                mandoX = Width / 2;
+                Background = new SolidBrush(BackgroundON_Actual);
+                xMando = Width / 2;
             }
             else
             {
-                fondo = new SolidBrush(fondoUncheckedActual);
-                mandoX = 1;
+                Background = new SolidBrush(BackgroundOFF_Actual);
+                xMando = 1;
+            }
+            if (!Enabled)
+            {
+                Background = new SolidBrush(Color.LightGray);
             }
             Rectangle rectanguloInterior = new Rectangle(2, 2, Width - 4, Height - 4);
-            gr.FillRectangle(fondo, rectanguloInterior);
+            gr.FillRectangle(Background, rectanguloInterior);
 
             // Dibuja el Mando
 
-            int x = mandoX;
+            int x = xMando;
             int y0 = 1;
             int y1 = Height - 2;
-            Pen lapizGris = new Pen(Color.Gray);
 
-            while (x <= mandoX + Width / 2 - 1)
+
+            while (x <= xMando + Width / 2 - 1)
             {
-                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizGris, x, y0, x++, y1);
-                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizGris, x, y0, x++, y1);
-                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizNegro, x, y0, x++, y1);
-                if (x <= mandoX + Width / 2 - 1) gr.DrawLine(lapizNegro, x, y0, x++, y1);
+                if (x <= xMando + Width / 2 - 1) gr.DrawLine(grayPen, x, y0, x++, y1);
+                if (x <= xMando + Width / 2 - 1) gr.DrawLine(grayPen, x, y0, x++, y1);
+                if (x <= xMando + Width / 2 - 1) gr.DrawLine(blackPen, x, y0, x++, y1);
+                if (x <= xMando + Width / 2 - 1) gr.DrawLine(blackPen, x, y0, x++, y1);
             }
 
             // |/O
 
             if (showLabels)
             {
-                Pen lapiz10 = new Pen(labelColor);
                 int margen = Height / 3;
-                if (estado == Estados.ON)
+                if (isON)
                 {
-                    gr.DrawLine(lapiz10, 1 + Width / 4, margen + 1, 1 + Width / 4, Height - 1 - margen);
+                    gr.DrawLine(labelPen, 1 + Width / 4, margen + 1, 1 + Width / 4, Height - 1 - margen);
                 }
                 else
                 {
-                    gr.DrawEllipse(lapiz10, Width - 1 - Width / 4 - (Height / 3) / 2, margen - 1, Height / 3, Height / 3);
+                    gr.DrawEllipse(labelPen, Width - 1 - Width / 4 - (Height / 3) / 2, margen - 1, Height / 3, Height / 3);
                 }
             }
         }
@@ -125,9 +163,21 @@ namespace VSIXControls
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
-            if (estado == Estados.ON) estado = Estados.OFF;
-            else estado = Estados.ON;
-            this.Invalidate();
+            if (Enabled)
+            {
+                IsON = !IsON;
+                this.Invalidate();
+            }
+        }
+
+        private void Switch_EnabledChanged(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        protected virtual void OnIsOnChanged(object sender, EventArgs e)
+        {
+            onIsOnChanged?.Invoke(sender, e);
         }
     }
 }
