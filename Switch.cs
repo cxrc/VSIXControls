@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VSIXControls
 {
-
+    [ToolboxBitmap(@"D:\Users\Tebra\source\repos\VSIXControls\Switch16x16.bmp")]
     [ProvideToolboxControl("VSIXControls", false)]
     public partial class Switch : UserControl
     {
@@ -26,6 +26,7 @@ namespace VSIXControls
             Colored = true;
         }
         public EventHandler onIsOnChanged;
+        [Description("Se produce cuando el Switch cambia de estado ON/OFF")]
         public event EventHandler IsONChanged
         {
             add
@@ -38,10 +39,10 @@ namespace VSIXControls
             }
         }
 
-        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'ON' (IsON = true) y la propiedad **Colored** es 'true'")]
-        public Color BackgroundON { get => backgroundOn; set { backgroundOn = value; Invalidate(); } }
-        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'OFF' (IsON = false) y la propiedad *Colored* es 'true'")]
-        public Color BackgroundOFF { get => backgroundOff; set { backgroundOff = value; Invalidate(); } }
+        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'ON' (IsON = true) y la propiedad Colored es 'true'.")]
+        public Color BackgroundON { get => backgroundOn; set { backgroundOn = value; Invalidate(); OnChangeColoredProperty(); } }
+        [Category("Apariencia"), Description("Color del fondo cuando el estado es 'OFF' (IsON = false) y la propiedad Colored es 'true'.")]
+        public Color BackgroundOFF { get => backgroundOff; set { backgroundOff = value; Invalidate(); OnChangeColoredProperty(); } }
         [Category("Comportamiento"), Description("Estado del interruptor ON (IsON = true) u OFF (IsON = False).")]
         public bool IsON 
         { 
