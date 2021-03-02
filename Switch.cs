@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VSIXControls
 {
-    [ToolboxBitmap(@"D:\Users\Tebra\source\repos\VSIXControls\Switch16x16.bmp")]
+    [ToolboxBitmap(@"..\..\Switch16x16.bmp")]
     [ProvideToolboxControl("VSIXControls", false)]
     public partial class Switch : UserControl
     {
