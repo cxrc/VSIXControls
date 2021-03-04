@@ -9,6 +9,8 @@ Controles de usuario para Windows Forms
 
 _Controles de usuario para Windows Forms en Visual Studio_
 
+![preview](Switch200x200.png)
+
 ----
 
 ## Descripción 👀
@@ -23,14 +25,16 @@ En la versión actual se han implementado dos controles:
 
 ## Controles 📋
 
-### Switch 
+### Switch ![Switch](Switch16x16.bmp)
 
 Simula un microinterruptor. En la actual versión tiene la apariencia de un microinterruptor de tipo deslizante con la palanca cuadrada. Hereda sus propiedades, métodos y eventos de la clase *`UserControl`* y ademas implementa los siguientes:
 
 > #### Propiedades
 
-- **IsON** : Propiedad de tipo *bool*. Establece o devuelve el estado del control. `true` si el interruptor está en posición ON o `false` si el interruptor está en posición OFF.
+- **IsON** : Propiedad de tipo *'bool'*. Establece o devuelve el estado del control. *`true`* si el interruptor está en posición ON o *`false`* si el interruptor está en posición OFF.
 - 
+
+## Led ![LED](Led16x16.bmp)
 
 ### Instalación 🔧
 
