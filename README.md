@@ -25,7 +25,7 @@ En la versión actual se han implementado dos controles:
 
 ### Switch 
 
-Simula un microinterruptor. En la actual versión tiene la apariencia de un microinterruptor de tipo deslizante con la palanca cuadrada. Hereda sus propiedades, métodos y eventos de la clase `*UserControl*` y ademas implementa los siguientes:
+Simula un microinterruptor. En la actual versión tiene la apariencia de un microinterruptor de tipo deslizante con la palanca cuadrada. Hereda sus propiedades, métodos y eventos de la clase *`UserControl`* y ademas implementa los siguientes:
 
 > #### Propiedades
 
