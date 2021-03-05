@@ -91,7 +91,7 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 
 ## Licencia 📄
 
-Este proyecto es software libre. Está permitido usarlo, copiarlo, modificarlo, etc. - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto es software libre. Está permitido usarlo, copiarlo, modificarlo, etc. - mira el archivo [LICENSE.md](LICENSE) para detalles
 
 
 ---
