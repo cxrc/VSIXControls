@@ -61,7 +61,7 @@ Una vez instalada la extensión, puede usar el cuadro de diálogo Administrar ex
 
 El proceso sería:
 
->1. Descargar el archivo VSIXControls.vsix del último release de mi repositorio de GitHub
+>1. Descargar el archivo VSIXControls.vsix del último release de [mi repositorio de GitHub](https://github.com/cxrc/VSIXControls/releases/tag/v1.0.0)
 >2. Situarse en el archivo en nuestro PC y hacer **doble click** en él (o seleccionarlo y pulsar ENTRAR)
 >3. Seguir las instrucciones que aparecen en pantalla.
  
