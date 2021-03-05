@@ -1,8 +1,3 @@
-# VSIXControls
-Controles de usuario para Windows Forms
-
-*****
-
 :construction: Under Construction !!! :construction:
 
 # VSIXControls
@@ -17,108 +12,88 @@ _Controles de usuario para Windows Forms en Visual Studio_
 
 En este proyecto se crean una serie de `controles de usuario` como extensión del IDE `Visual Studio` de Microsoft. La instalación de los controles se realiza de forma sencilla y pueden ser utilizados en cualquier proyecto de escritorio de `Windows Forms`.
 
-El proyecto es de código abierto y se distribuye bajo licencia GNU, por lo que cualquiera puede usar los controles en sus proyectos y/o modificarlos. Se admiten colaboraciones.
+El proyecto es de código abierto y se distribuye como software libre, por lo que cualquiera puede usar los controles en sus proyectos y/o modificarlos.
 
 En la versión actual se han implementado dos controles:
 > - **Switch** : Un control con la apariencia de un interruptor con dos estados (Encendido y apagado) 
 > - **LED**    : Un indicador simulando un piloto led tambien con dos estados (Encendido y apagado)
 
-## Controles 📋
+## Controles :round_pushpin:
 
 ### Switch ![Switch](Switch16x16.bmp)
 
+![image](https://user-images.githubusercontent.com/63002560/110090098-30f79e00-7d97-11eb-9f9d-dafe5d18aafe.png)
+
 Simula un microinterruptor. En la actual versión tiene la apariencia de un microinterruptor de tipo deslizante con la palanca cuadrada. Hereda sus propiedades, métodos y eventos de la clase *`UserControl`* y ademas implementa los siguientes:
 
-> #### Propiedades
+> #### Propiedades :triangular_ruler:
 
-- **IsON** : Propiedad de tipo *'bool'*. Establece o devuelve el estado del control. *`true`* si el interruptor está en posición ON o *`false`* si el interruptor está en posición OFF.
-- 
+- **IsON** : Propiedad de tipo *'bool'*. Establece o devuelve el estado del control, *`true`* si el interruptor está en posición ON o *`false`* si el interruptor está en posición OFF. Aparece en la pestaña *Comportamiento* en la ventana de *Propiedades* de Visual Studio.
+- **Colored** : Propiedad de tipo *`bool`*. Determina si el control muestra los colores 'BackgroundON' y 'BackgroundOFF' o solamente un fondo gris. ![image](https://user-images.githubusercontent.com/63002560/110089894-f2fa7a00-7d96-11eb-8004-a9242473083b.png)
+Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+- **BackgrounON** : Propiedad de tipo *`Color`*. Establece el color del fondo cuando el estado es 'ON' (IsON = true) y la propiedad *`Colored`* es 'true'. Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+- **BackgroundOFF** : Propiedad de tipo *`Color`*. Establece el color del fondo cuando el estado es 'OFF' (IsON = false) y la propiedad *`Colored`* es 'true'. Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+- **ShowLabels** : Propiedad de tipo *`bool`*. Determina si el control muestra los caracteres '1' y '0' indicando el estado del control. ![image](https://user-images.githubusercontent.com/63002560/110089474-76679b80-7d96-11eb-9bb7-19872048e628.png) Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+- **LabelColor** : Propiedad de tipo *`Color`*. Establece el color de las etiqueta '1' y '0' visibles si ShowLabels es 'true'. Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+
+> #### Eventos :zap:
+
+- **IsONChanged** : Se produce cuando el Switch cambia de estado ON/OFF. El evento es invocado cuando la propiedad *`IsON`* cambia su valor
 
 ## Led ![LED](Led16x16.bmp)
 
-### Instalación 🔧
+![image](https://user-images.githubusercontent.com/63002560/110090455-9b104300-7d97-11eb-8e06-95eaef4a12a2.png)
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+Simula un diodo LED de los que se utilizan como pilotos. Se puede cambiar el color cuando está encendido y cuando está apagado y puede ser redondo o rectangular. Hereda sus propiedades, métodos y eventos de la clase *`UserControl`* y ademas implementa los siguientes:
 
-_Dí cómo será ese paso_
+> #### Propiedades :triangular_ruler:
 
-```
-Da un ejemplo
-```
+- **IsON** : Propiedad de tipo *`bool`*. Estado del LED encendido (IsON = true) o apagado (IsON = False). Aparece en la pestaña *Comportamiento* en la ventana de *Propiedades* de Visual Studio.
+- **Appearance** : Propiedad de tipo *`Appearances`* que puede tomar los valores *`Round`* o *`Square`*. Establece la 'forma' del control: redondo o cuadrado. Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+- **LedColorON** : Propiedad de tipo *`Color`*. Establece el color del Led cuando el estado es 'Encendido' (IsON = true). Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
+- **LedColorOFF** : Propiedad de tipo *`Color`*. Establece el color del Led cuando el estado es 'Apagado' (IsON = false). Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
 
-_Y repite_
+### Instalación :electric_plug:
 
-```
-hasta finalizar
-```
+Por el momento esta extensión aunque está empaquetada en un archivo .vsix no está disponible en ***Visual Studio Marketplace***.
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+El cuadro de diálogo *`Extensiones > Administrar extensiones`* no puede detectar este archivo, pero se puede instalar el archivo .vsix si se hace **doble clic en él** o si se selecciona y se presiona ENTRAR. Después de eso, solo tiene que seguir las instrucciones.
 
-## Ejecutando las pruebas ⚙️
+Una vez instalada la extensión, puede usar el cuadro de diálogo Administrar extensiones para habilitarla, deshabilitarla o desinstalarla.
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+El proceso sería:
 
-### Analice las pruebas end-to-end 🔩
+>1. Descargar el archivo VSIXControls.vsix del último release de mi repositorio de GitHub
+>2. Situarse en el archivo en nuestro PC y hacer **doble click** en él (o seleccionarlo y pulsar ENTRAR)
+>3. Seguir las instrucciones que aparecen en pantalla.
+ 
+### Desinstalación :x:
 
-_Explica que verifican estas pruebas y por qué_
+Si desea dejar de usar la extensión, puede deshabilitarla o desinstalarla.
+Al deshabilitar una extensión esta sigue instalada pero está descargada.
 
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
+>1. En Visual Studio abra *`Extensiones > Administrar extensiones`*
+>2. En *`Instaladas`* busque la extensión **VSIXControls**.
+>3. Haga clic *`Desinstalar`* o *`Deshabilitar`*.
+>4. Reinicie Visual Studio.
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+* [Microsoft Visual Studio Community 2019](https://visualstudio.microsoft.com/es/vs/community/)
+* Fuente escrita en ***C#***
 
 ## Wiki 📖
 
+:construction: Under Construction !!! :construction:
 Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
 
-## Versionado 📌
+## Autor ✒️
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+* **Rafael Carballo Vázquez** - @cxrc
 
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
 
 ---
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
