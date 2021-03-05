@@ -82,16 +82,14 @@ Al deshabilitar una extensión esta sigue instalada pero está descargada.
 
 ## Wiki 📖
 
-:construction: Under Construction !!! :construction:
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/cxrc/VSIXControls/wiki)
 
 ## Autor ✒️
 
-* **Rafael Carballo Vázquez** - @cxrc
+* **Rafael Carballo Vázquez** - [cxrc](https://github.com/cxrc)
 
 ## Licencia 📄
 
 Este proyecto es software libre. Está permitido usarlo, copiarlo, modificarlo, etc. - mira el archivo [LICENSE.md](LICENSE) para detalles
-
 
 ---
