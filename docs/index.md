@@ -47,7 +47,7 @@ LabelColor : Propiedad de tipo Color. Establece el color de las etiqueta '1' y '
 
 - *IsONChanged* : Se produce cuando el Switch cambia de estado ON/OFF. El evento es invocado cuando la propiedad IsON cambia su valor
 
-### Led LED ![image](https://user-images.githubusercontent.com/63002560/110315982-5809d600-800a-11eb-96a1-06c7784f74f5.png)
+### Led ![image](https://user-images.githubusercontent.com/63002560/110315982-5809d600-800a-11eb-96a1-06c7784f74f5.png)
 
 image![image](https://user-images.githubusercontent.com/63002560/110316003-5f30e400-800a-11eb-927b-2e6d57cc581c.png)
 
