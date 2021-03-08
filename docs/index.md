@@ -10,9 +10,13 @@
 
 ---
 
+1. [Descripción](#id1)
+2. [Controles](#id2)
+   1. [Switch](#id21)
+
 ![preview](https://user-images.githubusercontent.com/63002560/110313720-20e5f580-8007-11eb-80e3-0b581b83c273.png)
 
-## Descripción 👀
+## Descripción 👀<a name="id1"></a>
 
 En este proyecto se crean una serie de controles de usuario como extensión del `IDE Visual Studio de Microsoft`. La instalación de los controles se realiza de forma sencilla y pueden ser utilizados en cualquier proyecto de escritorio de Windows Forms.
 
@@ -23,9 +27,9 @@ En la versión actual se han implementado los siguientes controles:
 - **Switch** : Un control con la apariencia de un interruptor con dos estados (Encendido y apagado)
 - **LED** : Un indicador simulando un piloto led tambien con dos estados (Encendido y apagado)
 
-## Controles 📍
+## Controles 📍<a name="id2"></a>
 
-### Switch ![image](https://user-images.githubusercontent.com/63002560/110314448-21cb5700-8008-11eb-94db-d23c7bc855d5.png)
+### Switch ![image](https://user-images.githubusercontent.com/63002560/110314448-21cb5700-8008-11eb-94db-d23c7bc855d5.png)<a name="id21"></a>
 
 ![image](https://user-images.githubusercontent.com/63002560/110314464-298afb80-8008-11eb-86b2-925ddbbeb19a.png)
 
