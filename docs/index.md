@@ -10,11 +10,14 @@
 
 ---
 
+![preview](https://user-images.githubusercontent.com/63002560/110313720-20e5f580-8007-11eb-80e3-0b581b83c273.png)
+
 1. [Descripción](#id1)
 2. [Controles](#id2)
    1. [Switch](#id21)
-
-![preview](https://user-images.githubusercontent.com/63002560/110313720-20e5f580-8007-11eb-80e3-0b581b83c273.png)
+   2. [Led](#id22)
+3. [Descarga e Instalación](#id3)
+4. [Desinstalación](#id4)
 
 ## Descripción 👀<a name="id1"></a>
 
@@ -51,7 +54,7 @@ LabelColor : Propiedad de tipo Color. Establece el color de las etiqueta '1' y '
 
 - *IsONChanged* : Se produce cuando el Switch cambia de estado ON/OFF. El evento es invocado cuando la propiedad IsON cambia su valor
 
-### Led ![image](https://user-images.githubusercontent.com/63002560/110315982-5809d600-800a-11eb-96a1-06c7784f74f5.png)
+### Led ![image](https://user-images.githubusercontent.com/63002560/110315982-5809d600-800a-11eb-96a1-06c7784f74f5.png)<a name="id22"></a>
 
 image![image](https://user-images.githubusercontent.com/63002560/110316003-5f30e400-800a-11eb-927b-2e6d57cc581c.png)
 
@@ -65,7 +68,7 @@ Simula un **diodo LED** de los que se utilizan como pilotos. Se puede cambiar el
 - **LedColorON** : Propiedad de tipo `Color`. Establece el color del Led cuando el estado es *Encendido* `(IsON = true)`. Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
 - **LedColorOFF** : Propiedad de tipo `Color`. Establece el color del Led cuando el estado es *Apagado* `(IsON = false)`. Aparece en la pestaña *Apariencia* en la ventana de *Propiedades* de Visual Studio.
 
-## Instalación 🔌
+## Instalación 🔌<a name="id3"></a>
 
 Por el momento esta extensión aunque está empaquetada en un archivo .vsix no está disponible en ***Visual Studio Marketplace***.
 
@@ -79,7 +82,7 @@ El proceso sería:
 2. Situarse en el archivo en nuestro PC y hacer **doble click** en él. (o seleccionarlo y pulsar ENTRAR)
 3. Seguir las instrucciones que aparecen en pantalla.
 
-## Desinstalación ❌
+## Desinstalación ❌<a name="id4"></a>
 
 Si desea dejar de usar la extensión, puede deshabilitarla o desinstalarla.
 
