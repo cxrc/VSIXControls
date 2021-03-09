@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="VSIXControls.b6954036-a22b-4004-8335-c2824831f600" Version="1.0" Language="es-ES" Publisher="Rafael Carballo Vázquez" />
+        <Identity Id="VSIXControls.b6954036-a22b-4004-8335-c2824831f600" Version="1.0.0" Language="es-ES" Publisher="Rafael Carballo Vázquez" />
         <DisplayName>VSIXControls</DisplayName>
         <Description xml:space="preserve">Toolbox controls for use with Microsoft Visual Studio in Windows Forms design.</Description>
+        <MoreInfo>https://cxrc.github.io/VSIXControls/</MoreInfo>
+        <License>LICENSE.txt</License>
         <Icon>Switch.png</Icon>
         <PreviewImage>Switch200x200.png</PreviewImage>
+        <Tags>controls; control; switch; led;</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
