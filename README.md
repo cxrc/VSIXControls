@@ -1,5 +1,7 @@
 # VSIXControls
 
+[See the English version of this file](README.en.md)
+
 _Controles de usuario para Windows Forms en Visual Studio_
 
 ![preview](Switch200x200.png)
