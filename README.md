@@ -55,18 +55,30 @@ Simula un diodo LED de los que se utilizan como pilotos. Se puede cambiar el col
 
 ### Instalación :electric_plug:
 
-Por el momento esta extensión aunque está empaquetada en un archivo .vsix no está disponible en ***Visual Studio Marketplace***.
+Esta extensión está publicada en ***Visual Studio Marketplace***.
+Existen varias formas de instalar esta extensión:
 
-El cuadro de diálogo *`Extensiones > Administrar extensiones`* no puede detectar este archivo, pero se puede instalar el archivo .vsix si se hace **doble clic en él** o si se selecciona y se presiona ENTRAR. Después de eso, solo tiene que seguir las instrucciones.
+#### - Con Administrador de Extensiones
 
+Esta extensión está publicada en ***Visual Studio Marketplace***.
+
+>1. Entre en Visual Studio IDE
+>2. Abra el cuadro de diálogo *`Administrador de extensiones`* usando el menú *`Extensiones > Administrar extensiones`*.
+>3. En el cuadro *`Administrador de extensiones`* busque la extensión, por ejemplo, poniendo en el cuadro de búsqueda *VSIXControls*
+>4. Pulse el botón *`Instalar`*.
+>5. Reinicie Visual Studio IDE.
+
+#### - Sin Administrador de Extensiones
+
+Tambien se puede instalar el archivo .vsix si se hace **doble clic en él** o si se selecciona y se presiona ENTRAR. Después de eso, solo tiene que seguir las instrucciones.
 Una vez instalada la extensión, puede usar el cuadro de diálogo Administrar extensiones para habilitarla, deshabilitarla o desinstalarla.
 
 El proceso sería:
 
->1. Descargar el archivo ***`VSIXControls.vsix`*** del último release de mi repositorio de GitHub. [Descragar última versión](https://github.com/cxrc/VSIXControls/releases/latest)
+>1. Descargar el archivo ***`VSIXControls.vsix`*** del último release de mi [repositorio de GitHub](https://github.com/cxrc/VSIXControls/releases/latest) o de la web de [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=RafaelCarballoVazquez.VSIXControls)
 >2. Situarse en el archivo en nuestro PC y hacer **doble click** en él (o seleccionarlo y pulsar ENTRAR)
 >3. Seguir las instrucciones que aparecen en pantalla.
- 
+
 ### Desinstalación :x:
 
 Si desea dejar de usar la extensión, puede deshabilitarla o desinstalarla.
