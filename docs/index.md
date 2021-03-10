@@ -91,8 +91,6 @@ El proceso sería:
 >1. Descargar el archivo ***`VSIXControls.vsix`*** del último release de mi [repositorio de GitHub](https://github.com/cxrc/VSIXControls/releases/latest) o de la web de [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=RafaelCarballoVazquez.VSIXControls)
 >2. Situarse en el archivo en nuestro PC y hacer **doble click** en él (o seleccionarlo y pulsar ENTRAR)
 >3. Seguir las instrucciones que aparecen en pantalla.
-![image](https://user-images.githubusercontent.com/63002560/110593376-c7530780-817b-11eb-8024-fb4d5ab42714.png)
-
 
 ## Desinstalación ❌<a name="id4"></a>
 
