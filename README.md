@@ -60,8 +60,6 @@ Existen varias formas de instalar esta extensión:
 
 #### - Con Administrador de Extensiones
 
-Esta extensión está publicada en ***Visual Studio Marketplace***.
-
 >1. Entre en Visual Studio IDE
 >2. Abra el cuadro de diálogo *`Administrador de extensiones`* usando el menú *`Extensiones > Administrar extensiones`*.
 >3. En el cuadro *`Administrador de extensiones`* busque la extensión, por ejemplo, poniendo en el cuadro de búsqueda *VSIXControls*
