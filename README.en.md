@@ -55,18 +55,28 @@ It simulates an LED diode of the kind used as pilots. The color can be changed w
 
 ### Instalation :electric_plug:
 
-At the moment this extension, although it is packaged in a .vsix file, is not available in ***Visual Studio Marketplace***.
+This extension is published on ***Visual Studio Marketplace***.
+There are several ways to install this extension:
 
-The *`Extensions> Manage Extensions`* dialog box cannot detect this file, but the .vsix file can be installed by just **double clicking** or selecting and pressing ENTER. After that, you just have to follow instructions.
+#### - With Extension Manager
 
+> 1. Enter Visual Studio IDE
+> 2. Open the *`Extensions manager`* dialog using the *`Extensions> Manage extensions`* menu.
+> 3. In the dialog *`Extension manager`* search for the extension, for example by putting in the search box *VSIXControls*
+> 4. Press the *`Install`* button.
+> 5. Restart Visual Studio IDE.
+
+#### - No Extension Manager
+
+You can also install the .vsix file by **double clicking** or selecting and pressing ENTER. After that, you just have to follow the instructions.
 After the extension is installed, you can use the Manage Extensions dialog to enable, disable, or uninstall it.
 
 The process would be:
 
-> 1. Download the file ***`VSIXControls.vsix`*** of the latest release from my GitHub repository. [Download latest version](https://github.com/cxrc/VSIXControls/releases/latest)
-> 2. Go to the file on your PC and **double click** on it (or select it and press ENTER)
+> 1. Download the file ***`VSIXControls.vsix`*** of the latest release from my [GitHub repository](https://github.com/cxrc/VSIXControls/releases/latest) or from the [Visual Studio Marketplace website ](https://marketplace.visualstudio.com/items?itemName=RafaelCarballoVazquez.VSIXControls)
+> 2. Go to the file on your PC and make **double click** on it (or select it and press ENTER)
 > 3. Follow the instructions on the screen. 
- 
+
 ### Desinstalation :x:
 
 If you want to stop using the extension, you can disable or uninstall it.
